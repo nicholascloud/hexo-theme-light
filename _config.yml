@@ -4,8 +4,8 @@ menu:
 
 widgets:
 - search
-- publications
-- pages
+- category
+- tag
 
 excerpt_link: Read More
 
