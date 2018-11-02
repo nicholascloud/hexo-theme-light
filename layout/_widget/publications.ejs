@@ -1,3 +1,16 @@
+<%/*
+Data schema:
+
+[
+  {
+    "title": "Publication Title",
+    "url": "http://...",
+    "image": "http://..."
+  },
+  ...
+]
+
+*/%>
 <% if ((site.data.publications || []).length){ %>
 <div class="widget tag publication-widget">
     <h3 class="title"><%= __('publications') %></h3>

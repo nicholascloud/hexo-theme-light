@@ -1,0 +1,24 @@
+<%/*
+Data schema:
+
+{
+    "Category": [
+        {"title": "My Title", "url": "https://..."},
+        ...
+    ],
+    ...
+}
+
+*/%>
+<% if (site.data.links){ %>
+<div class="widget tag">
+    <% Object.keys(site.data.links).forEach(function (category) { %>
+    <h3 class="title"><%= __(category) %></h3>
+    <ul class="entry">
+        <% site.data.links[category].forEach(function (link) { %>
+        <li><a href="<%- link.url %>"><%= link.title %></a></li>
+        <% }); %>
+    </ul>
+    <% }); %>
+</div>
+<% } %>
