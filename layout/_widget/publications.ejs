@@ -1,0 +1,23 @@
+<% if (site.categories.length){ %>
+<div class="widget tag publication-widget">
+    <h3 class="title"><%= __('publications') %></h3>
+    <div>
+        <% site.data.publications.forEach(function (pub) { %>
+        <aside class="publication">
+            <a href="<%= pub.url %>"
+               class="publication__image-link"
+               target="_blank">
+                <img src="<%= pub.image %>"
+                     class="publication__image"
+                     alt="<%= pub.title %>"
+                     title="<%= pub.title %>"
+                     scale="0" />
+            </a>
+            <a href="<%= pub.url %>"
+               class="publication__link"
+               target="_blank"><%= pub.title %></a>
+        </aside>
+        <% }); %>
+    </div>
+</div>
+<% } %>
