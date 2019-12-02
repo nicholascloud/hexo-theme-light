@@ -10,12 +10,19 @@ Data schema:
 }
 
 */%>
+<%
+var sortLinks = function (a, b) {
+  if (a.title > b.title) return 1;
+  if (a.title < b.title) return -1;
+  return 0;
+}
+%>
 <% if (site.data.links){ %>
 <div class="widget tag">
     <% Object.keys(site.data.links).forEach(function (category) { %>
     <h3 class="title"><%= __(category) %></h3>
     <ul class="entry">
-        <% site.data.links[category].forEach(function (link) { %>
+        <% site.data.links[category].sort(sortLinks).forEach(function (link) { %>
         <li><a href="<%- link.url %>" target="_blank" title="{{ link.title }}"><%= link.title %></a></li>
         <% }); %>
     </ul>
